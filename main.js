@@ -12,7 +12,7 @@ $(document).ready(function() {
     }
 
     function getWeather(lat, lon) {
-        $.getJSON("https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=2546b7a496c060af3bd2b136ddbd82dd", function(data) {
+        $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=2546b7a496c060af3bd2b136ddbd82dd", function(data) {
             $(".image").css("background-image", "url(" + "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png)");
             $(".description").append(data.weather[0].description);
             $(".degInt").append(Math.round(data.main.temp - 273.15) + " ºC");
